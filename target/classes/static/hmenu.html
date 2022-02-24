@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Left Side Hamburger Menu</title>
+    <link rel="stylesheet" href="hmenu.css" />
+    <script>
+      async function load_home(url) {
+        //   alert(e);
+        // let url = "manageuser.html";
+        content.innerHTML = await (await fetch(url)).text();
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Note: stick navigation inside body tag, not header -->
+    <!-- Note: navigation comes first in code, because it's "behind" everything -->
+    <ul class="navigation">
+      <li class="nav-item">
+        <a href="#" onclick="load_home('user.html')">Users</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" onclick="load_home('managetask.html')">Manage Task</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" onclick="load_home('userhome.html')">Manage Logs</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" onclick="load_home('bargraph.html')">Reports</a>
+      </li>
+      <li class="nav-item"><a href="index.html">Log out</a></li>
+    </ul>
+
+    <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+    <label for="nav-trigger"><span class="hidden_nav"></span></label>
+
+    <!-- Note: the rest of the site needs to be wrapped in unique div (like site-wrap) so that it can slide to the side in it's entirety -->
+    <div id="content" class="site-wrap"></div>
+    <!-- end of site-wrap -->
+  </body>
+</html>
