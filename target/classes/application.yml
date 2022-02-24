@@ -9,8 +9,6 @@ spring:
       FAIL_ON_EMPTY_BEANS: false
   h2:
     console:
-    settings:
-        web allow others : true
       enabled: true
       path: /db
   jpa:
